@@ -37,6 +37,7 @@ import {
   ConductTwoUpPage,
 } from './components/sheets/ConductCertificateSheet';
 import { MarkSheetSheet } from './components/sheets/MarkSheetSheet';
+import { OfflineIndicator } from './components/OfflineIndicator';
 
 const STORAGE_KEYS = {
   cert: 'ughs_malda_cert_draft_v1',
@@ -877,6 +878,7 @@ export default function App() {
             isDark={isDark}
             onToggleTheme={() => setIsDark((prev) => !prev)}
             onOpenSettings={() => setSettingsOpen(true)}
+            onAppInstalled={() => showToast('Govt. UGHS Malda app installed successfully.')}
           >
             <StudyCertificateSheet
               data={certData}
@@ -912,6 +914,7 @@ export default function App() {
             isDark={isDark}
             onToggleTheme={() => setIsDark((prev) => !prev)}
             onOpenSettings={() => setSettingsOpen(true)}
+            onAppInstalled={() => showToast('Govt. UGHS Malda app installed successfully.')}
           >
             <ConductCertificateSheet
               data={conductData}
@@ -975,6 +978,7 @@ export default function App() {
             isDark={isDark}
             onToggleTheme={() => setIsDark((prev) => !prev)}
             onOpenSettings={() => setSettingsOpen(true)}
+            onAppInstalled={() => showToast('Govt. UGHS Malda app installed successfully.')}
           >
             {activeBulkPage && (
               <ConductTwoUpPage
@@ -1023,6 +1027,7 @@ export default function App() {
             isDark={isDark}
             onToggleTheme={() => setIsDark((prev) => !prev)}
             onOpenSettings={() => setSettingsOpen(true)}
+            onAppInstalled={() => showToast('Govt. UGHS Malda app installed successfully.')}
           >
             <MarkSheetSheet
               data={markSheetData}
@@ -1067,6 +1072,7 @@ export default function App() {
           isDark={isDark}
           onToggleTheme={() => setIsDark((prev) => !prev)}
           onOpenSettings={() => setSettingsOpen(true)}
+          onAppInstalled={() => showToast('Govt. UGHS Malda app installed successfully.')}
         />
       )}
 
@@ -1076,6 +1082,8 @@ export default function App() {
         onChange={setSchoolConfig}
         onClose={() => setSettingsOpen(false)}
       />
+
+      <OfflineIndicator />
 
       {/* Toast Notification */}
       {toast && (

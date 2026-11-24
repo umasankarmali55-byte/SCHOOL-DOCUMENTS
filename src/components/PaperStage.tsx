@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import { SheetOrientation } from '../types/documents';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface PaperStageProps {
   title: string;
@@ -24,6 +25,7 @@ interface PaperStageProps {
   isDark: boolean;
   onToggleTheme: () => void;
   onOpenSettings: () => void;
+  onAppInstalled?: () => void;
   children: ReactNode;
 }
 
@@ -41,6 +43,7 @@ export function PaperStage({
   isDark,
   onToggleTheme,
   onOpenSettings,
+  onAppInstalled,
   children,
 }: PaperStageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -200,6 +203,9 @@ export function PaperStage({
             <Settings className="h-3.5 w-3.5 text-amber-700 dark:text-slate-300" />
             <span className="hidden xl:inline">School Header</span>
           </button>
+
+          {/* PWA Install App Button */}
+          <PWAInstallButton onInstalled={onAppInstalled} />
 
           {/* Light / Dark Theme Toggle */}
           <button

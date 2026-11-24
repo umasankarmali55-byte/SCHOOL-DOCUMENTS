@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#132347" />
+      <stop offset="55%" stop-color="#1c3570" />
+      <stop offset="100%" stop-color="#142b5e" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7d57c" />
+      <stop offset="50%" stop-color="#e5b33d" />
+      <stop offset="100%" stop-color="#b9831c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed Royal Academic Navy background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)" />
+
+  <!-- Outer ceremonial gold border -->
+  <rect x="28" y="28" width="456" height="456" rx="74" fill="none" stroke="url(#gold)" stroke-width="8" opacity="0.92" />
+  <rect x="44" y="44" width="424" height="424" rx="60" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.22" />
+
+  <!-- Central institutional shield & crest -->
+  <g transform="translate(256 244)">
+    <!-- Circular halo -->
+    <circle cx="0" cy="0" r="142" fill="#0e1c3b" stroke="url(#gold)" stroke-width="6" />
+    <circle cx="0" cy="0" r="126" fill="none" stroke="url(#gold)" stroke-width="2" stroke-dasharray="6 6" opacity="0.7" />
+
+    <!-- Academic Mortarboard Cap -->
+    <polygon points="0,-90 92,-48 0,-8 -92,-48" fill="url(#gold)" />
+    <path d="M-54,-30 L-54,10 C-54,28 54,28 54,10 L54,-30 L0,-6 Z" fill="#f8fafc" opacity="0.96" />
+    <line x1="74" y1="-39" x2="74" y2="16" stroke="#f7d57c" stroke-width="6" stroke-linecap="round" />
+    <circle cx="74" cy="22" r="9" fill="#f7d57c" />
+
+    <!-- Open Book / Certificate Scroll -->
+    <path d="M-74,48 C-46,36 -18,40 0,56 C18,40 46,36 74,48 L74,94 C46,82 18,86 0,102 C-18,86 -46,82 -74,94 Z" fill="url(#gold)" />
+    <path d="M-64,54 C-42,45 -18,48 -4,60 L-4,92 C-18,80 -42,78 -64,86 Z" fill="#ffffff" />
+    <path d="M64,54 C42,45 18,48 4,60 L4,92 C18,80 42,78 64,86 Z" fill="#ffffff" />
+  </g>
+
+  <!-- Subtle bottom monogram bar -->
+  <text
+    x="256"
+    y="444"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="40"
+    font-weight="700"
+    letter-spacing="6"
+    fill="#f7d57c"
+  >
+    UGHS MALDA
+  </text>
+</svg>

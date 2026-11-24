@@ -18,6 +18,7 @@ import {
   computeMarkSheetAnalytics,
   formatSlashDate,
 } from '../types/documents';
+import { PWAInstallButton } from './PWAInstallButton';
 
 type RegistryFilter = 'all' | 'cert' | 'conduct' | 'p' | 'u' | 's';
 
@@ -38,6 +39,7 @@ interface StudentRegistryProps {
   isDark: boolean;
   onToggleTheme: () => void;
   onOpenSettings: () => void;
+  onAppInstalled?: () => void;
 }
 
 const KIND_LABELS: Record<RegistryRecord['kind'], string> = {
@@ -73,6 +75,7 @@ export function StudentRegistry({
   isDark,
   onToggleTheme,
   onOpenSettings,
+  onAppInstalled,
 }: StudentRegistryProps) {
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<RegistryFilter>('all');
@@ -187,6 +190,7 @@ export function StudentRegistry({
             <Settings className="h-3.5 w-3.5 text-amber-700 dark:text-slate-300" />
             <span>School Header</span>
           </button>
+          <PWAInstallButton onInstalled={onAppInstalled} />
           <button
             type="button"
             onClick={onToggleTheme}
