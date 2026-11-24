@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Certificate – Govt. UGHS Malda</title>
+<style>
+:root{--bg:#eef1f5;--panel:#fff;--ink:#1b1f27;--mut:#5d6675;--line:#d5dae2;--acc:#1d4ed8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171c;--panel:#1e2229;--ink:#e8ebf0;--mut:#9aa3b2;--line:#323946;--acc:#6b9bff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171c;--panel:#1e2229;--ink:#e8ebf0;--mut:#9aa3b2;--line:#323946;--acc:#6b9bff;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,Segoe UI,Arial,sans-serif}
+.app{display:grid;grid-template-columns:340px 1fr;gap:16px;padding:16px;max-width:1300px;margin:auto}
+@media(max-width:860px){.app{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;align-self:start}
+h1{font-size:17px;margin:0 0 12px}
+label{display:block;font-size:12px;color:var(--mut);margin:10px 0 3px}
+input,select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btns{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+button{padding:9px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff}
+.note{font-size:12px;color:var(--mut);margin-top:10px}
+.stage{overflow:auto;max-width:100%;display:flex;justify-content:center}
+/* ===== A4 certificate, positions copied from the original (mm) ===== */
+.sheet{width:210mm;height:297mm;background:#fff;color:#000;position:relative;overflow:hidden;font-family:Arial,Helvetica,sans-serif;font-weight:700;box-shadow:0 2px 14px rgba(0,0,0,.25);flex:none}
+.sheet *{font-weight:700}
+.abs{position:absolute}
+.frame{position:absolute;inset:6.5mm 3.6mm 5.8mm 3.6mm;border:1px solid #1f2f6b;outline:1.5px solid #000;outline-offset:-4px}
+.wm{position:absolute;left:22mm;top:70mm;width:166mm;height:166mm;opacity:.13}
+.c{left:0;right:0;text-align:center}
+.t1{top:18mm;font-size:14.5pt;line-height:7mm}
+.t2{top:25.3mm;font-size:14.5pt;line-height:7mm}
+.t3{top:33.2mm;font-size:10pt;line-height:4mm}
+.meta{left:12mm;right:11mm;top:37.6mm;font-size:7.6pt;display:flex;justify-content:space-between;line-height:4mm}
+.meta a{color:#1155cc;text-decoration:underline}
+.green{left:9.5mm;right:9.5mm;top:42.9mm;height:1.3mm;background:#4f6228}
+.cap{left:98mm;top:48mm;width:15mm}
+.capline{left:98.5mm;top:57.4mm;width:14.5mm;border-top:1px solid #000}
+.ttl{top:60mm;font:700 8.5pt "Copperplate Gothic Bold",Georgia,"Times New Roman",serif;text-decoration:underline;letter-spacing:.3px;line-height:4mm}
+.photo{left:157mm;top:66.7mm;width:29mm;height:30mm;border:3px solid #000;text-align:center;font-size:8.5pt;line-height:4.8mm;padding-top:3mm;overflow:hidden;background:#fff}
+.photo i{display:block;width:17mm;height:0;border-top:2.5px solid #1a3fe0;margin:5.5mm auto 0}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.body{left:12mm;width:187mm;top:118.8mm;font-size:13pt;line-height:6.47mm;text-align:justify;margin:0}
+.body p{margin:0}
+.f{display:inline-block;border-bottom:1.3px solid #000;text-align:center;min-height:1em;line-height:1.1;vertical-align:baseline}
+.sg1{left:129mm;top:189.5mm;font-size:13pt;line-height:6.5mm}
+.sg2{left:107mm;top:208.6mm;font-size:13pt;line-height:6.5mm}
+.pl{left:12mm;top:227.7mm;font-size:13pt;line-height:6.5mm}
+.pl u{text-decoration:underline}
+.tabs{display:flex;gap:6px;padding:12px 16px 0;max-width:1300px;margin:auto;flex-wrap:wrap}
+.tabs button{font-weight:600}.tabs button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.ms .t1{top:20mm}.ms .t2{top:27.3mm}.ms .t3{top:35.2mm}.ms .meta{top:39.6mm}.ms .green{top:44.9mm}.ms .wm{top:62mm}
+.msb{position:absolute;left:12mm;right:11mm;top:52mm}
+.mt{text-align:center;font-size:13.5pt;color:#1c2f5e;text-decoration:underline;letter-spacing:.4px;line-height:7mm}
+.msub{text-align:center;font-size:9.5pt;margin:1mm 0 3mm}
+.li{font-size:10pt;line-height:5.9mm}.li .dm{color:#4f6228;margin-right:2mm}
+.li .v{display:inline-block;min-width:100mm;border-bottom:1.2px solid #000;line-height:1.1;padding-left:2mm;vertical-align:baseline;min-height:1em}
+table.mk{width:100%;border-collapse:collapse;margin-top:3mm;font-size:9pt}
+.mk th,.mk td{border:1px solid #000;text-align:center;padding:0 1.5mm;height:5.8mm}
+.mk th{background:#d5dbe5;font-size:9.5pt}.mk td.l{text-align:left;padding-left:2.5mm}.mk td.r{text-align:right;padding-right:3mm}
+.decl{font-size:10pt;text-indent:8mm;text-align:justify;line-height:5.8mm;margin-top:4mm}
+.ms1{left:128mm;top:222mm;font-size:10.5pt}.ms2{left:106mm;top:236mm;font-size:10.5pt}.ms3{left:12mm;top:250mm;font-size:10.5pt;line-height:5.8mm}
+.mg{display:grid;grid-template-columns:1fr 62px 62px;gap:5px;align-items:center;font-size:12px}.mg input{padding:4px 6px}
+.only-u{display:none}.isu .only-u{display:block}
+[hidden]{display:none!important}
+@page{size:A4;margin:0}
+@media print{
+ html,body{background:#fff!important}
+ .panel,.tabs{display:none!important}
+ .app{display:block;padding:0;max-width:none}
+ .stage{display:block;overflow:visible}
+ .sheet{zoom:1!important;box-shadow:none;margin:0;width:210mm;height:296mm}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style></head><body>
+<div class="tabs"><button class="on" data-t="cert">Study Certificate</button><button data-t="ms">Mark Sheet (Primary / Upper Primary)</button><button data-t="sec">Mark Sheet (Secondary)</button></div>
+<div class="app" id="tab-cert">
+<div class="panel">
+ <h1>Study Certificate</h1>
+ <label>Student name</label><input id="name">
+ <div class="row">
+  <div><label>Son / Daughter</label><select id="rel"><option value="Son/Daughter">Son/Daughter (as is)</option><option>Son</option><option>Daughter</option></select></div>
+  <div><label>His / Her</label><select id="pro"><option value="">As is</option><option>His</option><option>Her</option></select></div>
+ </div>
+ <label>Father's name (Sri)</label><input id="father">
+ <label>Mother's name (Smt.)</label><input id="mother">
+ <div class="row">
+  <div><label>Date of birth</label><input id="dob" type="date"></div>
+  <div><label>Class</label><input id="cls" placeholder="e.g. VIII"></div>
+ </div>
+ <div class="row">
+  <div><label>Session</label><input id="ses" value="2024/2025"></div>
+  <div><label>Date of issue</label><input id="issue" type="date"></div>
+ </div>
+ <div class="row">
+  <div><label>Enrolment / ID no.</label><input id="eno"></div>
+  <div><label>Admission date</label><input id="adm" type="date"></div>
+ </div>
+ <label>Student photo (optional)</label><input id="ph" type="file" accept="image/*">
+ <div class="btns"><button class="p" id="print">Print / Save PDF</button><button id="clear">Clear</button></div>
+ <div class="note">Print dialog: paper <b>A4</b>, margins <b>None</b>, scale 100%, tick <b>Background graphics</b>.</div>
+</div>
+<div class="stage" id="stage">
+<div class="sheet" id="sheet">
+ <div class="frame"></div>
+ <svg class="wm" viewBox="0 0 200 200"><g fill="none" stroke="#3b5a8c" stroke-width="2"><circle cx="100" cy="100" r="97"/><circle cx="100" cy="100" r="69"/></g>
+  <defs><path id="a1" d="M24,100 A76,76 0 0 1 176,100"/><path id="a2" d="M12,100 A88,88 0 0 0 188,100"/></defs>
+  <g fill="#3b5a8c" font-family="Arial" font-weight="700" font-size="21" text-anchor="middle"><text><textPath href="#a1" startOffset="50%">U.G HIGH SCHOOL</textPath></text><text><textPath href="#a2" startOffset="50%">BORIGUMMA</textPath></text><text x="100" y="116" font-size="52">★</text></g></svg>
+ <div class="abs c t1">THE OFFICE OF THE HEADMASTER</div>
+ <div class="abs c t2">GOVERNMENT UPGRADED HIGH SCHOOL, MALDA</div>
+ <div class="abs c t3">AT/PO-MALDA, BLOCK-BORIGUMMA, DIST-KORAPUT, PIN-764056</div>
+ <div class="abs meta"><span>Email ID- <a>ughschoolmalda123@gmail.com</a></span><span>BSE CODE-216FA</span><span>UDISE CODE-21290310201</span></div>
+ <div class="abs green"></div>
+ <svg class="abs cap" viewBox="0 0 60 40"><path d="M30 2 L58 14 L30 26 L2 14Z" fill="#000"/><path d="M14 22 V32 C14 37 46 37 46 32 V22 L30 29Z" fill="#000"/><path d="M52 16 V30" stroke="#000" stroke-width="2"/></svg>
+ <div class="abs capline"></div>
+ <div class="abs c ttl">STUDY CERTIFICATE</div>
+ <div class="abs photo" id="photo">PASTE<br>PHOTO<i></i></div>
+ <div class="abs body">
+  <p style="text-indent:29mm">It is certified that <span class="f" id="o_name" style="min-width:106mm"></span>, <span id="o_rel">Son/Daughter</span> of Sri <span class="f" id="o_father" style="min-width:125mm"></span> and Smt. <span class="f" id="o_mother" style="min-width:106mm"></span>, And <span class="o_pro">His/her</span> Date of birth in is <span class="f" id="o_dob" style="min-width:31mm"></span> was studying <span class="f" id="o_cls" style="min-width:23mm"></span> class for the Education Session <span id="o_ses">2024/2025</span> at the Govt. Upgraded High School Malda . <span class="o_pro2">His/ Her</span> Enrolment in identification number and admission date is <span class="f" id="o_eno" style="min-width:29mm"></span> &amp; <span class="f" id="o_adm" style="min-width:31mm"></span> respectively as per records found in the School Admission Register of this school.</p>
+  <p style="text-indent:77mm">All the above particular mentioned above in the certificate is true best of my knowledge and self-beliefs.</p>
+ </div>
+ <div class="abs sg1">“Yours Faithfully”</div>
+ <div class="abs sg2">(Seal and Signature of Headmaster)</div>
+ <div class="abs pl"><u>Place:-Govt.UGHS Malda</u><br>Date of <u>Issue :-</u><span class="f" id="o_issue" style="min-width:30mm"></span></div>
+</div></div></div>
+<div class="app" id="tab-ms" hidden>
+<div class="panel" id="mpanel">
+ <h1>Mark Sheet</h1>
+ <label id="mtl">Mark sheet type</label><select id="mtype"><option value="p">Primary Class (7 subjects, 1400)</option><option value="u">Upper Primary Class (9 subjects, 1800)</option><option value="s">Secondary (6 subjects, 600)</option></select>
+ <label>Name of the student</label><input id="m_name">
+ <label>Father's name</label><input id="m_father">
+ <label>Mother's name</label><input id="m_mother">
+ <div class="row"><div><label>Date of birth</label><input id="m_dob" type="date"></div><div><label>Education session</label><input id="m_ses" placeholder="2022-23"></div></div>
+ <div class="row only-u"><div><label>Registration no.</label><input id="m_reg"></div><div><label>Roll no.</label><input id="m_roll"></div></div>
+ <div class="row"><div><label>Class issued</label><input id="m_cls" placeholder="7th"></div><div><label>Date of issue</label><input id="m_issue" type="date"></div></div>
+ <label>Marks secured (optional – leave blank to print empty)</label>
+ <div class="mg" id="m_marks"></div>
+ <div class="btns"><button class="p" id="mprint">Print / Save PDF</button><button id="mclear">Clear</button></div>
+ <div class="note">Print dialog: paper <b>A4</b>, margins <b>None</b>, scale 100%, tick <b>Background graphics</b>.</div>
+</div>
+<div class="stage"><div class="sheet ms" id="msSheet"><div class="abs msb" id="msb"></div>
+ <div class="abs ms1">“Yours Faithfully”</div><div class="abs ms2">(Seal and Signature of Headmaster)</div>
+ <div class="abs ms3"><u>Place:-Govt.UGHS Malda</u><br>Date of <u>Issue :-</u><span class="f" id="m_oissue" style="min-width:30mm"></span></div>
+</div></div></div>
+<script>
+(function(){
+ var $=function(i){return document.getElementById(i)};
+ var ids=['name','rel','pro','father','mother','dob','cls','ses','issue','eno','adm'];
+ function fd(v){if(!v)return'';var p=v.split('-');return p.length==3?p[2]+'/'+p[1]+'/'+p[0]:v}
+ function set(c,t){var n=document.getElementsByClassName(c);for(var i=0;i<n.length;i++)n[i].textContent=t}
+ function render(){
+  $('o_name').textContent=$('name').value.toUpperCase();
+  $('o_father').textContent=$('father').value.toUpperCase();
+  $('o_mother').textContent=$('mother').value.toUpperCase();
+  $('o_dob').textContent=fd($('dob').value);
+  $('o_cls').textContent=$('cls').value;
+  $('o_ses').textContent=$('ses').value;
+  $('o_issue').textContent=fd($('issue').value);
+  $('o_eno').textContent=$('eno').value;
+  $('o_adm').textContent=fd($('adm').value);
+  $('o_rel').textContent=$('rel').value;
+  var p=$('pro').value;
+  set('o_pro',p||'His/her');set('o_pro2',p||'His/ Her');
+  try{localStorage.setItem('sc_form2',JSON.stringify(ids.reduce(function(a,k){a[k]=$(k).value;return a},{})))}catch(e){}
+ }
+ ids.forEach(function(k){$(k).addEventListener('input',render);$(k).addEventListener('change',render)});
+ $('ph').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){$('photo').innerHTML='<img alt="" src="'+r.result+'">'};r.readAsDataURL(f)});
+ $('print').onclick=function(){window.print()};
+ $('clear').onclick=function(){ids.forEach(function(k){if(k!='ses'&&k!='rel'&&k!='pro')$(k).value=''});$('photo').innerHTML='PASTE<br>PHOTO<i></i>';$('ph').value='';render()};
+ try{var s=JSON.parse(localStorage.getItem('sc_form2')||'null');if(s)ids.forEach(function(k){if(s[k]!=null)$(k).value=s[k]})}catch(e){}
+ function fit(){['sheet','msSheet'].forEach(function(id){var st=$(id).parentNode;if(st.clientWidth)$(id).style.zoom=Math.min(1,(st.clientWidth-8)/(210*3.7795))})}
+ window.addEventListener('resize',fit);window.addEventListener('beforeprint',function(){$('sheet').style.zoom=1;$('msSheet').style.zoom=1});window.addEventListener('afterprint',fit);
+
+ var SU={p:['ODIA','ENGLISH','MATHEMATICS','SCIENCE','SOCIAL SCIENCE','ARTS EDUCATION','PHYSICAL EDUCATION'],u:['ODIA','ENGLISH','MATHEMATICS','SCIENCE','SOCIAL SCIENCE','HINDI/SANSKRIT','ART EDUCATION','PHYSICAL EDUCATION','WORK EDUCATION'],s:['ODIA','ENGLISH','HINDI/SANSKRIT','MATHEMATICS','GENERAL SCIENCE','SOCIAL SCIENCE']};
+ var mids=['m_name','m_father','m_mother','m_dob','m_ses','m_reg','m_roll','m_cls','m_issue'];
+ var sh=$('sheet'),ms=$('msSheet');
+ ['wm','frame','t1','t2','t3','meta','green'].reverse().forEach(function(c){var e=sh.querySelector('.'+c);if(e)ms.insertBefore(e.cloneNode(true),ms.firstChild)});
+ function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
+ function fd2(v){if(!v)return'';var p=v.split('-');return p.length==3?p[2]+'-'+p[1]+'-'+p[0]:v}
+ function grid(){var t=$('mtype').value,sc=t=='s',h='<b></b><b>'+(sc?'Marks':'T-1')+'</b><b>'+(sc?'Remarks':'T-2')+'</b>';SU[t].forEach(function(n,i){h+='<span>'+n+'</span><input data-t="1" data-i="'+i+'" inputmode="numeric"><input data-t="2" data-i="'+i+'"'+(sc?'':' inputmode="numeric"')+'>'});$('m_marks').innerHTML=h;
+  Array.prototype.forEach.call($('m_marks').querySelectorAll('input'),function(i){i.addEventListener('input',mrender)})}
+ function mrender(){
+  var t=$('mtype').value,u=t=='u',r=t!='p',sc=t=='s',n=SU[t].length,v=function(k){return esc($(k).value)};
+  document.getElementById('mpanel').className='panel'+(r?' isu':'');
+  var m1=[],m2=[];Array.prototype.forEach.call($('m_marks').querySelectorAll('input'),function(i){(i.dataset.t=='1'?m1:m2)[+i.dataset.i]=i.value});
+  function sum(a){var s=0,any=false;a.forEach(function(x){if(x!==''&&x!=null&&!isNaN(x)){s+=+x;any=true}});return any?s:''}
+  var L=function(l,val){return '<div class="li"><span class="dm">❖</span>'+l+' <span class="v">'+val+'</span></div>'};
+  var h='<div class="mt">'+(sc?'MARK SHEET':'MARK SHEET FOR '+(u?'UPPER PRIMARY':'PRIMARY')+' CLASS')+'</div><div class="msub">(Mark sheet to be issued to on the Basis of '+(u?'TERM-1 &amp; TERM-2 Examination':'Annual Exam')+' of Particular Class)</div>';
+  h+=L('Name Of the Student: -',v('m_name').toUpperCase())+L('Father Name:-',v('m_father').toUpperCase())+L('Mother Name:-',v('m_mother').toUpperCase())+L('Date of Birth:-',esc(fd2($('m_dob').value)));
+  if(r)h+=L('Registration No:-',v('m_reg'))+L('Roll No:-',v('m_roll'));
+  h+=L('Education Session:-',v('m_ses'))+L('Class which marksheet has issued: -',v('m_cls'));
+  if(sc){h+='<table class="mk"><tr><th style="width:15mm">SL NO</th><th>SUBJECT</th><th style="width:32mm">FULL MARKS</th><th style="width:32mm">SECURED<br>MARKS</th><th style="width:38mm"><u>REMARKS ?</u></th></tr>';
+  SU[t].forEach(function(s,i){h+='<tr><td>'+(i+1)+'</td><td class="l">'+s+'</td><td>100</td><td>'+esc(m1[i]||'')+'</td><td>'+esc(m2[i]||'')+'</td></tr>'});
+  h+='<tr><td></td><td class="l">TOTAL MARK\'S</td><td>'+n*100+'</td><td>'+sum(m1)+'</td><td></td></tr></table>';}
+  else{h+='<table class="mk"><tr><th rowspan="2" style="width:13mm">SL<br>No.</th><th rowspan="2">SUBJECT</th><th colspan="2">TERM-1 EXAM(FA1+T.O+SA-1)</th><th colspan="2">TERM-2(FA-2+T.O+SA-2)</th></tr><tr><th style="width:24mm">TOTAL</th><th style="width:30mm">SECURED</th><th style="width:24mm">TOTAL</th><th style="width:30mm">SECURED</th></tr>';
+  SU[t].forEach(function(s,i){h+='<tr><td>'+(i+1)+'</td><td class="l">'+s+'</td><td>100</td><td>'+esc(m1[i]||'')+'</td><td>100</td><td>'+esc(m2[i]||'')+'</td></tr>'});
+  h+='<tr><td></td><td class="r">TOTAL MARK\'S</td><td>'+n*100+'</td><td>'+sum(m1)+'</td><td>'+n*100+'</td><td>'+sum(m2)+'</td></tr></table>';}
+  h+='<div class="decl">All the particular regarding the mark sheet of above students is true to the best of knowledge and self-belief.</div>';
+  $('msb').innerHTML=h;$('m_oissue').textContent=fd2($('m_issue').value);
+  try{localStorage.setItem('sc_ms',JSON.stringify(mids.concat(['mtype']).reduce(function(a,k){a[k]=$(k).value;return a},{})))}catch(e){}
+ }
+ mids.forEach(function(k){$(k).addEventListener('input',mrender)});
+ $('mtype').addEventListener('change',function(){grid();mrender()});
+ $('mprint').onclick=function(){window.print()};
+ $('mclear').onclick=function(){mids.forEach(function(k){$(k).value=''});grid();mrender()};
+ try{var q=JSON.parse(localStorage.getItem('sc_ms')||'null');if(q)mids.concat(['mtype']).forEach(function(k){if(q[k]!=null)$(k).value=q[k]})}catch(e){}
+ grid();mrender();
+ Array.prototype.forEach.call(document.querySelectorAll('.tabs button'),function(b){b.onclick=function(){
+  Array.prototype.forEach.call(document.querySelectorAll('.tabs button'),function(x){x.className=x==b?'on':''});
+  var t=b.dataset.t;$('tab-cert').hidden=t!='cert';$('tab-ms').hidden=t=='cert';if(t!='cert'){if(t=='sec')$('mtype').value='s';else if($('mtype').value=='s')$('mtype').value='p';$('mtype').hidden=$('mtl').hidden=t=='sec';$('mtype').options[2].hidden=t!='sec';grid();mrender()}fit()}});
+ fit();render();
+})();
+</script></body></html>
